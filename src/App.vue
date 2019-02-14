@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <div class="flex_container">
     <header>
       <h1>Paweł Majczyk<br /><span class="subtitle">Front-End Developer</span>
       </h1>
@@ -24,6 +25,7 @@
           </li>
         </ul>
       </section>
+    </header>
       <div class="layout_wrapper">
       <section class="work">
         <h2 class="section-head">Work experience</h2>
@@ -31,14 +33,18 @@
           <h3 class="work__company work__company--current">Bricodes</h3>
           <h3 class="work__job-title">Junior Front-End Developer</h3>
           <div class="work__details">
-            Had opportunity to deliver small SPA applications for marketing purposes.<br />
+            Have opportunity to deliver small SPA applications for marketing purposes.<br />
             My main responsibilities were:
             <ul>
               <li>Creating responsive layouts for given design</li>
               <li>Providing CSS animations</li>
-              <li>Craftign basic components in VueJS framework</li>
+              <li>Designing basic components in VueJS framework</li>
             </ul>
-            [ HERE TO BE DRAGONS!... or content]
+            <p>
+              Company excels on rapid deployment of games,
+              quizes and other entertaiment solutions for
+               agencies leading marketing campaigns
+              </p>
           </div>
         </div>
         <hr class="divider2" />
@@ -78,6 +84,14 @@
         </ul>
       </section>
       <aside class="sidebar">
+        <section class="summary">
+          <h2 class="section-head">Summary</h2>
+          <p>Front-End developer living in <b>Warsaw</b>, Poland</p>
+          <p>Specializing in building Javascript-based Single&nbsp;Page Applications</p>
+          <p>I am looking for long-term business relation.
+            Always open to aquire new knowledge, and thus attending courses online,
+            and available workshops (TDD, JS libraries, functional programming) </p>
+        </section>
         <section class="technologies">
         <h2 class="section-head">Technologies</h2>
           <p class="tech-skills">
@@ -93,6 +107,7 @@
             <b>NPM</b>
             <b>BEM</b>
             <b>SCSS</b>
+            <b>Zeplin</b>
             <b>Photoshop</b>
             <b>Inkscape</b>
           </p>
@@ -113,14 +128,23 @@
         <section class="personal">
         <h2 class="section-head">Personal interests</h2>
           <p>
-            Social Dancing, sci-fi, detective stories, HARDCORE GAMING
+            Social Dancing (UrbanKiz, Zouk), sci-fi, detective&nbsp;stories
           </p>
         </section>
 
       </aside>
       </div>
-    </header>
-
+    </div>
+    <div class="flex_container flex_container--footer">
+    <footer>
+      <p class="legal-notes">"I hereby authorize you to process my personal
+         data included in my job application for the
+         needs of the recruitment process
+         (in accordance to the Personal Data
+          Protection Act 29.08.1997 no 133 position 883)."
+    </p>
+    </footer>
+    </div>
   </div>
 </template>
 
@@ -138,21 +162,35 @@ export default {
   padding: 0;
 }
 #app {
+  min-height: 100vh;
   @media print {
     width: 100%;
   }
   width: 80%;
   margin: 0 auto;
 
+  display: flex;
+  flex-direction: column;
+
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: 200;
-  font-size: 20x;
+  font-size: 18px;
+  @media print {
+    font-size: 12px;
+  }
+}
+.flex_container {
+  flex: 1;
+  // flex-basis: 100%;
+}
+.flex-container--footer {
+  flex: 0 0 2em;
 }
 
 header {
   h1 {
-    padding: 0.75em;
-    line-height: 0.8em;
+    padding: 0.25em;
+    line-height: 0.65em;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 3em;
     font-weight: 600;
@@ -213,6 +251,11 @@ header {
 .work {
   flex: 1;
   flex-basis: 60%;
+  @media only print {
+    p, li {
+      font-size: 1.25em;
+    }
+  }
   .work__current {
     padding: 1em;
     font-size: 1.2em;
@@ -222,6 +265,7 @@ header {
   }
   .work__company--current {
     font-size: 1.75em;
+    color: #366;
   }
   .work__details {
     padding: 0.2em;
@@ -242,10 +286,19 @@ header {
     }
   }
 }
-.additional {
+.additional, .personal, .summary {
   p {
-    padding: 0 2em;
+    padding: 0 3em;
   }
+}
+.summary {
+  p {
+    font-size: 1.25em;
+    font-weight: 400;
+    padding: 0em 0.75em;
+    margin-bottom: 1em;
+  }
+
 }
 .technologies {
   .tech-skills {
@@ -253,19 +306,27 @@ header {
     font-weight: 800;
     font-family: 'Trebuchet MS',
     'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    display: grid;
-    grid-gap: 0.1em;
-    grid-template-columns: 1fr 1fr;
-    margin: 0 2em;
+    // display: grid;
+    // grid-gap: 0.1em;
+    // grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: 1em 2em;
 
     b {
       display: inline;
       margin: 0.125em;
-      padding: 0.1em;
+      padding: 0.4em;
       color: #366;
       background-color: #eee;
       text-align: center;
     }
   }
+}
+.legal-notes {
+  margin: 1em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #666;
 }
 </style>
