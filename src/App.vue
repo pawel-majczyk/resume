@@ -87,7 +87,7 @@
         <section class="summary">
           <h2 class="section-head">Summary</h2>
           <p>Front-End developer living in <b>Warsaw</b>, Poland</p>
-          <p>Specializing in building Javascript-based Single&nbsp;Page Applications</p>
+          <p>Specializes in Javascript-based Single&nbsp;Page Applications</p>
           <p>I am looking for long-term business relation.
             Always open to aquire new knowledge, thus constantly attending online courses,
             and available workshops</p>
