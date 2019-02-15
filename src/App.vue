@@ -89,8 +89,8 @@
           <p>Front-End developer living in <b>Warsaw</b>, Poland</p>
           <p>Specializing in building Javascript-based Single&nbsp;Page Applications</p>
           <p>I am looking for long-term business relation.
-            Always open to aquire new knowledge, and thus attending courses online,
-            and available workshops (TDD, JS libraries, functional programming) </p>
+            Always open to aquire new knowledge, thus constantly attending online courses,
+            and available workshops</p>
         </section>
         <section class="technologies">
         <h2 class="section-head">Technologies</h2>
@@ -246,6 +246,7 @@ header {
   display: flex;
 }
 .sidebar {
+  font-size: 0.85em;
   flex-basis: 40%;
 }
 .work {
