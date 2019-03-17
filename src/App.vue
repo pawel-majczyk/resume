@@ -3,8 +3,8 @@
     <div class="flex_container">
     <Head />
       <div class="layout_wrapper">
-      <section class="work">
-        <h2 class="section-head">Work experience</h2>
+      <BaseSection class="work" sectionTitle="Work experience" >
+        <!-- <h2 class="section-head">Work experience</h2> -->
         <div class="work__current"><time>02.2018 - now </time>
           <h3 class="work__company work__company--current">Bricodes</h3>
           <h3 class="work__job-title">Junior Front-End Developer</h3>
@@ -25,40 +25,14 @@
         </div>
         <hr class="divider2" />
         <ul class="work__rest">
-          <li><time>02.2017 - now </time>
-          <h3 class="work__company work__company--minor">
-            Convel Sp. j. - Manufacturing Production Technician</h3>
-            <p class="work__minor-description">
-              SMT Line Managment;
-              quality assurance;
-              documentation management</p>
-          </li>
-          <li><time>08.2014 - 01.2017 </time>
-          <h3 class="work__company work__company--minor">
-            CM International SA – Production Technician</h3>
-            <p class="work__minor-description">
-              Electronics assembly;
-              quality assurance;
-              service works</p>
-          </li>
-          <li><time>02.2007 - 01.2014 </time>
-          <h3 class="work__company work__company--minor">
-            WABCO Polska Sp. z o.o. – Production Worker</h3>
-            <p class="work__minor-description">
-              SMT Operator;
-              final assembly and testing</p>
-          </li>
-          <li><time>05.2006 - 09.2006 </time>
-          <h3 class="work__company work__company--minor">
-            Triada PC – Office Assistant</h3>
-            <p class="work__minor-description">
-              advertisement design;
-              website administration;
-              database management;
-              client service</p>
-          </li>
+          <WorkEntry v-for="(entry, index) in data.workExperience.past" :key="index">
+            <template #company>{{ entry.company }}</template>
+            <template #title>{{ entry.title }}</template>
+            <template #timespan>{{ entry.timespan }}</template>
+            <template #description>{{ entry.description }}</template>
+          </WorkEntry>
         </ul>
-      </section>
+      </BaseSection>
       <aside class="sidebar">
         <section class="summary">
           <h2 class="section-head">Summary</h2>
@@ -126,11 +100,19 @@
 
 <script>
 import Head from './components/Head.vue';
+import BaseSection from './components/BaseSection.vue';
+import WorkEntry from './components/WorkEntry.vue';
 
+import cvData from './data.json';
 
 export default {
   name: 'app',
-  components: { Head },
+  data() {
+    return {
+      data: cvData,
+    };
+  },
+  components: { Head, BaseSection, WorkEntry },
 };
 </script>
 

@@ -1,0 +1,91 @@
+{
+  "subject": {
+    "firstName": "Paweł",
+    "lastName": "Majczyk",
+    "title": "Front-End Developer"
+  },
+  "contact": {
+    "phone": "+48 605 685 607",
+    "email": "pawel.majczyk@gmail.com",
+    "linkedIn": "linkedin.com/in/pmajczyk",
+    "gitHub": "github.com/pawel‑majczyk"
+  },
+  "summary": {
+    "text": "slotText"
+  },
+  "workExperience": {
+    "current": {
+      "company": "Bricodes",
+      "title": "Junior Front-End Developer",
+      "short": "slotText"
+    },
+    "past": [
+      {
+        "company": "Convel Sp. j.",
+        "title": "Manufacturing Production Technician",
+        "timespan": [
+          "02.2017",
+          "now"
+        ],
+        "description": "SMT Line Managment; quality assurance; documentation management"
+      },
+      {
+        "company": "CM International SA",
+        "title": "Production Technician",
+        "timespan": [
+          "08.2014",
+          "01.2017"
+        ],
+        "description": "Electronics assembly; quality assurance; service works"
+      },
+      {
+        "company": "WABCO Polska Sp. z o.o.",
+        "title": "Production Worker",
+        "timespan": [
+          "02.2007",
+          "01.2014"
+        ],
+        "description": "SMT Operator; final assembly and testing"
+      },
+      {
+        "company": "Triada PC",
+        "title": "Office Assistant",
+        "timespan": [
+          "05.2006 - 09.2006"
+        ],
+        "description": "advertisement design; website administration; database management; client service"
+      }
+    ]
+  },
+  "technologies": [
+    "Javascript",
+    "HTML",
+    "CSS",
+    "Git",
+    "VueJS",
+    "ESlint",
+    "RWD",
+    "Webpack",
+    "Babel",
+    "NPM",
+    "BEM",
+    "SCSS",
+    "Zeplin",
+    "Photoshop",
+    "Inkscape"
+  ],
+  "additionalInfo": [
+    "Good understading of spoken",
+    "and written English (B2)",
+    "Proficiency in editing both vector and raster images (also 3D model texturing)",
+    "Basic knowledge of Game Design principles",
+    "Eye for aesthetics",
+    "Commitment to craft quality code"
+  ],
+  "personalInterests": [
+    "Social dancing (UrbanKiz",
+    "Zouk)",
+    "Sci-fi",
+    "Detective stories"
+  ]
+}
