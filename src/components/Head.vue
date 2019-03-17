@@ -1,6 +1,8 @@
 <template>
-<header>
-      <h1>Paweł Majczyk<br /><span class="subtitle">Front-End Developer</span>
+<header class="header">
+      <h1 class="header__title">Paweł Majczyk
+          <br />
+        <span class="header__subtitle">Front-End Developer</span>
       </h1>
       <hr class="divider1" />
       <section class="contact">
@@ -36,22 +38,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-header {
-  h1 {
+.header {
+  &__title {
     padding: 0.25em;
     line-height: 0.65em;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 3em;
     font-weight: 600;
     display: inline-block;
-    .subtitle {
+  }
+  &__subtitle {
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       font-size: 0.4em;
       text-transform: uppercase;
       font-weight: 100;
       letter-spacing: 0.34em;
       color: #7a7a7a;
-    }
   }
   .contact ul {
     display: grid;

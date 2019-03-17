@@ -25,45 +25,24 @@
         </div>
         <hr class="divider2" />
         <ul class="work__rest">
-          <WorkEntry v-for="(entry, index) in data.workExperience.past" :key="index">
-            <template #company>{{ entry.company }}</template>
-            <template #title>{{ entry.title }}</template>
-            <template #timespan>{{ entry.timespan }}</template>
-            <template #description>{{ entry.description }}</template>
-          </WorkEntry>
+          <WorkEntry v-for="(entry, index) in data.workExperience.past"
+            :key="index"
+            :entry="entry"
+          />
         </ul>
       </BaseSection>
       <aside class="sidebar">
-        <section class="summary">
-          <h2 class="section-head">Summary</h2>
+        <BaseSection class="summary" sectionTitle="Summary" >
           <p>Front-End developer living in <b>Warsaw</b>, Poland</p>
           <p>Specializes in Javascript-based Single&nbsp;Page Applications</p>
           <p>I am looking for long-term business relation.
             Always open to aquire new knowledge, thus constantly attending online courses,
             and available workshops</p>
-        </section>
-        <section class="technologies">
-        <h2 class="section-head">Technologies</h2>
-          <p class="tech-skills">
-            <b>Javascript</b>
-            <b>HTML</b>
-            <b>CSS</b>
-            <b>Git</b>
-            <b>VueJS</b>
-            <b>ESlint</b>
-            <b>RWD</b>
-            <b>Webpack</b>
-            <b>Babel</b>
-            <b>NPM</b>
-            <b>BEM</b>
-            <b>SCSS</b>
-            <b>Zeplin</b>
-            <b>Photoshop</b>
-            <b>Inkscape</b>
-          </p>
-        </section>
-        <section class="additional">
-        <h2 class="section-head">Additional info</h2>
+        </BaseSection>
+        <BaseSection class="technologies" sectionTitle="Technologies" >
+          <TechSkillsList :skills="data.technologies" />
+        </BaseSection>
+        <BaseSection class="additional" sectionTitle="Additional info" >
           <p>
             <ul>
               <li>Good understading of spoken, and written English (B2)</li>
@@ -74,13 +53,12 @@
               <li>Commitment to craft quality code</li>
             </ul>
           </p>
-        </section>
-        <section class="personal">
-        <h2 class="section-head">Personal interests</h2>
+        </BaseSection>
+        <BaseSection class="personal" sectionTitle="Personal interests" >
           <p>
             Social Dancing (UrbanKiz, Zouk), sci-fi, detective&nbsp;stories
           </p>
-        </section>
+        </BaseSection>
 
       </aside>
       </div>
@@ -102,6 +80,7 @@
 import Head from './components/Head.vue';
 import BaseSection from './components/BaseSection.vue';
 import WorkEntry from './components/WorkEntry.vue';
+import TechSkillsList from './components/TechSkillsList.vue';
 
 import cvData from './data.json';
 
@@ -112,7 +91,12 @@ export default {
       data: cvData,
     };
   },
-  components: { Head, BaseSection, WorkEntry },
+  components: {
+    Head,
+    BaseSection,
+    WorkEntry,
+    TechSkillsList,
+  },
 };
 </script>
 
@@ -124,10 +108,10 @@ export default {
 }
 #app {
   min-height: 100vh;
-  @media print {
-    width: 100%;
+  width: 90%;
+  @media only screen AND (min-width: 680px) {
+    width: 80%;
   }
-  width: 80%;
   margin: 0 auto;
 
   display: flex;
@@ -147,30 +131,22 @@ export default {
 .flex-container--footer {
   flex: 0 0 2em;
 }
-
-.section-head {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  letter-spacing: 1px;
-  font-weight: 200;
-  margin: 1em 1em 0.5em 0.5em;
-  // display: inline-block;
-  color: white;
-  padding: 0.1em 0.4em;
-  background-color: #366;
-  position: relative;
-  @media only print {
-    color: #366;
-    background-color: #ccc;
-    border-bottom: 0.05em dashed #366;
-  }
-}
 .layout_wrapper {
   display: flex;
+  flex-direction: column;
+  @media only screen AND (min-width: 800px) {
+  flex-direction: row;
+  }
+  @media print {
+    flex-direction: row;
+  }
 }
+
 .sidebar {
   font-size: 0.85em;
   flex-basis: 40%;
 }
+
 .work {
   flex: 1;
   flex-basis: 60%;
@@ -209,6 +185,8 @@ export default {
     }
   }
 }
+
+
 .additional, .personal, .summary {
   p {
     padding: 0 3em;
@@ -237,7 +215,7 @@ export default {
 
     margin: 1em 2em;
 
-    b {
+    &>b {
       display: inline;
       margin: 0.125em;
       padding: 0.4em;
