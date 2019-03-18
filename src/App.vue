@@ -2,9 +2,8 @@
   <div id="app">
     <div class="flex_container">
     <Head />
-      <div class="layout_wrapper">
+    <div class="layout_wrapper">
       <BaseSection class="work" sectionTitle="Work experience" >
-        <!-- <h2 class="section-head">Work experience</h2> -->
         <div class="work__current"><time>02.2018 - now </time>
           <h3 class="work__company work__company--current">Bricodes</h3>
           <h3 class="work__job-title">Junior Front-End Developer</h3>
@@ -31,37 +30,37 @@
           />
         </ul>
       </BaseSection>
+
       <aside class="sidebar">
         <BaseSection class="summary" sectionTitle="Summary" >
           <p>Front-End developer living in <b>Warsaw</b>, Poland</p>
           <p>Specializes in Javascript-based Single&nbsp;Page Applications</p>
-          <p>I am looking for long-term business relation.
+          <p>I am looking for a fulltime, long-term business relation.
             Always open to aquire new knowledge, thus constantly attending online courses,
             and available workshops</p>
         </BaseSection>
+
         <BaseSection class="technologies" sectionTitle="Technologies" >
           <TechSkillsList :skills="data.technologies" />
         </BaseSection>
+
         <BaseSection class="additional" sectionTitle="Additional info" >
           <p>
             <ul>
-              <li>Good understading of spoken, and written English (B2)</li>
-              <li>Proficiency in editing both vector and raster images
-                (also 3D model texturing)</li>
-              <li>Basic knowledge of Game Design principles</li>
-              <li>Eye for aesthetics</li>
-              <li>Commitment to craft quality code</li>
+              <li v-for="item in data.additionalInfo" :key="item">
+                {{ item }}
+              </li>
             </ul>
           </p>
         </BaseSection>
+
         <BaseSection class="personal" sectionTitle="Personal interests" >
           <p>
             Social Dancing (UrbanKiz, Zouk), sci-fi, detective&nbsp;stories
           </p>
         </BaseSection>
-
       </aside>
-      </div>
+      </div> <!-- layout wrapper end -->
     </div>
     <div class="flex_container flex_container--footer">
     <footer>
@@ -101,11 +100,11 @@ export default {
 </script>
 
 <style lang="scss">
-
 * {
   margin: 0;
   padding: 0;
 }
+
 #app {
   min-height: 100vh;
   width: 90%;
@@ -113,10 +112,8 @@ export default {
     width: 80%;
   }
   margin: 0 auto;
-
   display: flex;
   flex-direction: column;
-
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: 200;
   font-size: 18px;
@@ -126,7 +123,6 @@ export default {
 }
 .flex_container {
   flex: 1;
-  // flex-basis: 100%;
 }
 .flex-container--footer {
   flex: 0 0 2em;
@@ -141,12 +137,10 @@ export default {
     flex-direction: row;
   }
 }
-
 .sidebar {
   font-size: 0.85em;
   flex-basis: 40%;
 }
-
 .work {
   flex: 1;
   flex-basis: 60%;
@@ -172,7 +166,6 @@ export default {
       margin: 1em 0;
     }
   }
-
   .work__rest {
     padding: .8em;
     font-size: 0.95em;
@@ -201,30 +194,7 @@ export default {
   }
 
 }
-.technologies {
-  .tech-skills {
-    font-size: 1.2em;
-    font-weight: 800;
-    font-family: 'Trebuchet MS',
-    'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    // display: grid;
-    // grid-gap: 0.1em;
-    // grid-template-columns: 1fr 1fr;
-    display: flex;
-    flex-wrap: wrap;
 
-    margin: 1em 2em;
-
-    &>b {
-      display: inline;
-      margin: 0.125em;
-      padding: 0.4em;
-      color: #366;
-      background-color: #eee;
-      text-align: center;
-    }
-  }
-}
 .legal-notes {
   margin: 1em;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

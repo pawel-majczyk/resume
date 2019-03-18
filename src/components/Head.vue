@@ -41,7 +41,7 @@ export default {
 .header {
   &__title {
     padding: 0.25em;
-    line-height: 0.65em;
+    line-height: 0.80em;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-size: 3em;
     font-weight: 600;
@@ -49,6 +49,7 @@ export default {
   }
   &__subtitle {
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      line-height: 0.1em;
       font-size: 0.4em;
       text-transform: uppercase;
       font-weight: 100;
@@ -57,9 +58,15 @@ export default {
   }
   .contact ul {
     display: grid;
+
     list-style: none;
     margin: 0 auto;
-    grid-template-columns: 1fr 1fr;
+    @media screen AND (min-width: 580px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media print {
+      grid-template-columns: 1fr 1fr;
+    }
     li {
       display: inline-block;
       padding: 0.3em 1em;
