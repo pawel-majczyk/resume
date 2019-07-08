@@ -5,11 +5,16 @@
     <div class="layout_wrapper">
       <BaseSection class="work" sectionTitle="Work experience" >
         <div class="work__current"><time>02.2018 - now </time>
-          <h3 class="work__company work__company--current">Bricodes</h3>
+          <h3 class="work__company work__company--current">
+            Bricodes
+            <span class="work__part-time">
+              part-time
+          </span>
+          </h3>
           <h3 class="work__job-title">Junior Front-End Developer</h3>
           <div class="work__details">
             Have opportunity to deliver small SPA applications for marketing purposes.<br />
-            My main responsibilities were:
+            My main responsibilities are:
             <ul>
               <li>Creating responsive layouts for given design</li>
               <li>Providing CSS animations</li>
@@ -149,24 +154,35 @@ export default {
       font-size: 1.25em;
     }
   }
-  .work__current {
+  &__current {
     padding: 1em;
     font-size: 1.2em;
   }
-  .work__company {
+  &__company {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
-  .work__company--current {
+  &__company--current {
     font-size: 1.75em;
     color: #366;
   }
-  .work__details {
+  &__part-time {
+    font-weight: 200;
+    font-size: 0.5em;
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 0.2em .5em;
+    background: #eee;
+    color: #666;
+    transform: translateY(-0.25em);
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  }
+  &__details {
     padding: 0.2em;
     ul {
       margin: 1em 0;
     }
   }
-  .work__rest {
+  &__rest {
     padding: .8em;
     font-size: 0.95em;
     list-style: none;
