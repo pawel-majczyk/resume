@@ -1,4 +1,6 @@
 # resume
+## Deployment:
+https://pawel-majczyk.github.io/resume/
 
 ## Project setup
 ```
